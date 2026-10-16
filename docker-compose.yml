@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:17
+    container_name: tiendaya-db
+    environment:
+      POSTGRES_DB: tiendaya
+      POSTGRES_USER: tiendaya
+      POSTGRES_PASSWORD: tiendaya123
+    ports:
+      - "5433:5432"
+    volumes:
+      - tiendaya_data:/var/lib/postgresql/data
+
+volumes:
+  tiendaya_data:
